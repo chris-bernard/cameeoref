@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-2">
+            <!--Sidebar content-->
+
+            {{items}}
+
+            Search: <input ng-model="query" class="form-control">
+            Sort by:
+            <select ng-model="orderProp" class="form-control">
+                <option value="ref_fr">Alphabetical</option>
+                <option value="year">Year</option>
+                <option value="serie">Série</option>
+            </select>
+
+        </div>
+        <div class="col-md-10">
+            <!--Body content-->
+            <p>{{items.length}} references for {{brand}}</p>
+
+            <ul style="list-style: none;" class="phones">
+                <li ng-repeat="item in items | filter:query | orderBy:orderProp" class="thumbnail">
+                    <!--a href="#" class="thumb"><img ng-src="{{phone.imageUrl}}"></a-->
+                    <a href="#/ref/{{item.code}}">{{item.ref_fr}}</a>
+                    <p>Code: {{item.code}}</p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

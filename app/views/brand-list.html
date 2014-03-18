@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="col-md-2">
+            <!--Sidebar content-->
+
+            Search: <input ng-model="query" class="form-control">
+            Sort by:
+            <select ng-model="orderProp" class="form-control">
+                <option value="brand">Alphabetical</option>
+                <option value="priority">Priority</option>
+            </select>
+
+        </div>
+        <div class="col-md-10">
+            <!--Body content-->
+            <p>{{items.length}} brands in our referential</p>
+
+            <ul style="list-style: none;" class="phones">
+                <li ng-repeat="item in items | filter:query | orderBy:orderProp" class="thumbnail phone-listing">
+                    <!--a href="#" class="thumb"><img ng-src="{{phone.imageUrl}}"></a-->
+                    <a href="#/brands">{{item.brand}}</a>
+
+                    <p>Code: {{item.code}}</p>
+
+                    <p>Priority: {{item.priority}}</p>
+
+                    <p>Products type: {{item.products_type}}</p>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</div>

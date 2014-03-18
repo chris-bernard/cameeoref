@@ -1,5 +1,17 @@
+# Yeoman / Bower / Grunt stuffs
 node_modules
 dist
 .tmp
 .sass-cache
 app/bower_components
+test/bower_components
+
+# Intellij
+.idea
+*.iml
+atlassian-ide-plugin.xml
+
+# Data
+app/img
+app/references
+app/referential
